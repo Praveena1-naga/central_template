@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Bootstrap 4 - Live View</title>
+    <style>
+        .body{
+            height:100vh;
+            width:100%;
+            /* background-image: url(https://www.tooplate.com/templates/2103_central/img/tm-bg-section-4.jpg);
+            background-position: fixed; */
+        }
+        .H1{
+            color:rgb(136, 131, 131);
+            text-align:center;
+            background-color: white;
+            font-weight: lighter;
+        }
+        .H2{
+            color:rgb(136, 131, 131);
+            text-align:center;
+            background-color: white;
+            font-weight: lighter;
+        }
+       
+    
+        .H1{
+            margin-top: 60px;
+            font-size: xx-large;
+            font-weight: lighter;
+        }
+        .menu{
+            height:50px;
+            width:100%;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: end;
+            
+        }
+        .menutext,.menubox{
+            height:40px;
+            width:50px;
+            
+            display: flex;
+            align-items: center;
+            color:rgb(136, 131, 131);
+        }
+        .menubox{
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border:1px solid rgb(136, 131, 131);
+            border-radius: 5px;
+            color:rgb(136, 131, 131);
+            position: relative;
+        }
+        
+        .navbar{
+            height:150px;
+            width: 150px; 
+            color:rgb(136, 131, 131);
+            background-color:white;
+            border:1px black solid;
+            position: absolute;
+            top:100%;
+            right:0;
+            text-align: start;
+            font-size: larger;
+            z-index:1;
+            display: none;
+        } 
+        .menubox:hover .navbar{
+            display: block;
+        }
+        .img{
+            height:400px;
+            width:100%;
+            margin-top: 20px;
+            /* background-color: bisque; */
+            background-image: url(https://www.tooplate.com/templates/2103_central/img/gallery-img-01.jpg);
+            display: flex;
+            flex-direction: column;
+            animation:image 5s ease-in-out 5s infinite;
+        }
+        @keyframes image{
+            0%{
+                background-image:url(https://www.tooplate.com/templates/2103_central/img/gallery-img-01.jpg);
+            }
+            25%{
+                background-image:url(https://www.tooplate.com/templates/2103_central/img/gallery-img-02.jpg);
+            }
+            50%{
+                background-image:url(https://www.tooplate.com/templates/2103_central/img/gallery-img-03.jpg);
+            }
+            100%{
+                background-image:url(https://www.tooplate.com/templates/2103_central/img/gallery-img-04.jpg);
+            }
+        }
+        .arrows{
+            display: flex;
+            
+            height:350px;
+            width:100%;
+        }
+        .left{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height:350px;
+            width:50%;
+            padding-left: 5px;
+        }
+        .right{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            height:350px;
+            width:50%;
+        }
+        .outlet{
+            height:50px;
+            width:100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+            background: rgb(0, 0, 0); 
+            background: rgba(243, 241, 241, 0.5);
+        }
+        .three{
+            height:400px;
+            width:100%;
+            margin-top: 50px;
+            /* background-color: rgb(196, 153, 236); */
+            display: flex;
+        } 
+        .child1,.child2{
+            height:400px;
+            width:33%;
+            /* background-color: rgb(134, 224, 227); */
+            /* border:black 1px solid; */
+            padding: 10px;
+            
+        }
+        .child3{
+            height:400px;
+            width:34%;
+            /* background-color: rgb(134, 224, 227); */
+            /* border:black 1px solid; */
+            padding:0px 10px 0px 10px;
+        }
+        .innerchild1{
+            height:60px;
+            width:100%;
+            /* background-color: azure; */
+            text-align: center;
+            font-size: 60px;
+            padding-top: 10px;
+        }
+        .innerchild2{
+            height:240px;
+            width:100%;
+            /* background-color: rgb(141, 152, 152); */
+            font-size: larger;
+            font-weight:normal;
+            padding: 10px;
+            
+        }
+        .innerchild2>h4{
+            font-size: 25px;
+        }
+        .innerchild3{
+            height:100px;
+            width:100%;
+            /* background-color: rgb(51, 53, 53); */
+            display: flex;
+            justify-content: end;
+        }
+        .innerchild3>div{
+            height:50px;
+            width:150px;
+            border:1px solid rgb(39, 38, 38);
+            font-size: larger;
+            font-weight: lighter;
+            color: rgb(121, 123, 123);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .child3>.h4{
+            font-size: 30px;
+            font-weight: lighter;
+            text-align: center;
+        }  
+        .child3>p{
+            font-size: 20px;
+            font-weight:lighter;
+        }
+        .hovereffect:hover{
+            background-color: rgb(120, 119, 119);
+            color: white;
+        }
+        .two{
+            height: 650px;
+            width:100%;
+            background-color:white;
+            margin-top: 130px;
+            display: flex;
+            justify-content: space-between;
+        }  
+        .two-one,.two-two{
+            height: 600px;
+            width:47%;
+            background-color: whitesmoke;
+        }
+        .two-one-one{
+            height: 43%;
+            width:100%;
+            background-image: url(https://www.tooplate.com/templates/2103_central/img/tm-img-1.jpg);
+            background-position: fixed;
+        }
+        .two-one-two,.two-two-two{
+            padding: 10px 30px 0px 30px;
+        }
+        .two-one-two>h3,.two-two-two>h3{
+            font-size: 40px;
+        }
+        .two-one-two>p,.two-two-two>p{
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+        }
+        .box>div{
+            height: 50px;
+            width:150px;
+            border:black solid 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color:rgb(91, 91, 91)
+            
+        }
+        .two-two-one{
+            height: 43%;
+            width:100%;
+            background-image: url(https://www.tooplate.com/templates/2103_central/img/tm-img-2.jpg);
+        }
+        
+        .bg{
+            height: 930px;
+            width:100%;
+            background-image: url(https://www.tooplate.com/templates/2103_central/img/tm-bg-section-4.jpg);
+            
+        }
+        .bg>.transparent{
+            height:250px;
+            width:100%;
+            border:1px solid black;
+        }
+        .bg>.vertical{
+            height:600px;
+            width:100%;
+            background-color: white;
+            padding-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .vertical>.vertical1{
+            height: 600px;
+            width:30%;
+            background-image: url(https://www.tooplate.com/templates/2103_central/img/tm-sc4-img-1.jpg);
+        }
+        .vertical>.vertical2{
+            height:600px;
+            width:67%;
+            
+            /* background-color: aquamarine; */
+        }
+        .vertical21,.vertical22{
+            margin-bottom: 15px;
+        }
+        .vertical2>.vertical21,.vertical22,.vertical23{
+            height:190px;
+            width:100%;
+            border: 1px rgb(164, 164, 164) solid;
+            display: flex;
+            
+        }
+        
+        .vertical21>.image{
+            background-image: url(https://www.tooplate.com/templates/2103_central/img/sc4-img-2.jpg);
+        }
+        .vertical22>.image{
+            background-image: url(https://www.tooplate.com/templates/2103_central/img/sc4-img-3.jpg);
+        }
+        .vertical23>.image{
+            background-image: url(https://www.tooplate.com/templates/2103_central/img/sc4-img-4.jpg);
+        }
+        .vertical21>.image,.vertical22>.image,.vertical23>.image{
+            height:100%;
+            width:25%;
+            /* border:1px solid black; */
+
+        }
+        .vertical21>.text,.vertical22>.text,.vertical23>.text{
+            height:100%;
+            width:75%;
+            padding: 30px;
+            background-color: rgb(226, 228, 228);
+            /* border: 1px solid rgb(12, 12, 12); */
+            box-sizing: border-box;
+        }
+        
+        .vertical21>.text>h1,.vertical22>.text>h1,.vertical23>.text>h1{
+            font-weight: lighter;
+        }
+        .vertical21>.text>p,.vertical22>.text>p,.vertical23>.text>p{
+            font-weight: lighter;
+            font-size:15px;
+            line-height: 20px;
+        }
+        .last{
+            height:330px;
+            width:100%;
+            margin-top: 80px;
+            display: flex;
+            margin-bottom: 30px;
+        }
+        .last1{
+            height:100%;
+            width:55%;
+            box-sizing: border-box;
+        }
+        
+        .last11{
+            height:50px;
+            width:100%;
+            
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .last12{
+            height:180px;
+            width:100%;
+            
+            margin-bottom: 25px;
+        }
+        .last13{
+            height:50px;
+            width:100%;
+            /* background-color: brown; */
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: end;
+        }
+        .last11>.name,.email{
+            height:100%;
+            width:47%;
+            /* background-color: rgb(165, 242, 242); */
+            /* border:1px solid rgb(47, 47, 47) */
+        }
+        .last2{
+            height:100%;
+            width:45%;
+            padding: 0px 40px 40px 40px;
+        }
+        .last2>.heading{
+            font-size:30px;
+            font-weight: bold;
+        }
+        .last2>p{
+            font-size:20px;
+            font-weight: lighter;
+            line-height: 25px;
+        }
+        .copyright{
+            height: 50px;
+            width:100%;
+            text-align: center;
+            font-size: 20px;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="body">
+        
+        <h1 class="H1">CENTRAL</h1>
+        <h3 class="H2">NEW TEMPLATE FOR YOU</h3>
+        <div class="menu">
+            <div class="menutext">Menu</div>
+            <div class="menubox">
+                <i class="fa-solid fa-bars"></i>
+                <div class="navbar">
+                    <p style="padding-left: 10px;">Home</p>
+                    <p style="padding-left: 10px;">Info</p>
+                    <p style="padding-left: 10px;">Contact</p>
+            </div>
+            </div>
+            
+        </div>
+        <div class="img">
+            <div class="arrows">
+            <div class="left"><i class="fa-solid fa-circle-chevron-left"></i></div>
+            <div class="right"><i class="fa-solid fa-circle-chevron-right"></i></div>
+            </div>
+            <div class="outlet">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+        </div>
+        <div class="three">
+            <div class="child1">
+                <div class="innerchild1"><i class="fa-solid fa-power-off"></i></div>
+                <div class="innerchild2">
+                    <h4>Lorem ipsum dolor</h4>
+                    <p style="line-height: 30px;">Central Template is provided by Tooplate. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+                </div>
+                <div class="innerchild3">
+                    <div class="hovereffect">Learn More</div>
+                </div>
+            </div>
+            <div class="child2">
+                <div class="innerchild1"><i class="fa-solid fa-bolt-lightning" style="color: rgb(20, 21, 22);"></i></div>
+                <div class="innerchild2">
+                    <h4>Lorem ipsum dolor</h4>
+                    <p style="line-height: 30px;">Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+                </div>
+                <div class="innerchild3">
+                    <div class="hovereffect">Learn More</div>
+                </div>
+            </div>
+            <div class="child3">
+                <h3 class="h4">Nulla maximus hendrerit</h3>
+                <p>Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit.</p>
+                <p>Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada, iaculis est.</p>
+                <p>+ Curabitur a massa malesuada, ullamcorper nisi tempus.</p>
+                <p>+ Maecenas ultricies magna sed suscipit pulvinar.</p>
+                <p>+ Nulla malesuada elit nec nisi aliquet pretium.</p>
+            </div>
+        </div>
+        <div class="two">
+            <div class="two-one">
+                <div class="two-one-one"></div>
+                <div class="two-one-two">
+                    <h3>Lorem ipsum dolor</h3>
+                    <p>Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+                    <div class="box">
+                        <div class="details hovereffect" style="font-size: larger;" >Details</div>
+                    </div>
+                </div>
+            </div>
+            <div class="two-two">
+                <div class="two-two-one"></div>
+                <div class="two-two-two">
+                    <h3>Vestibulum sit amet</h3>
+                    <p>Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+                    <div class="box">
+                        <div class="details hovereffect" style="font-size: larger;">Details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg">
+            <div class="transparent"></div>
+            <div class="vertical">
+                <div class="vertical1"></div>
+                <div class="vertical2">
+                    <div class="vertical21">
+                        <div class="image"></div>
+                        <div class="text">
+                            <h1>Etiam tincidunt ullamcorper</h1>
+                            <p>Maecenas tempor nibh sed rhoncus ullamcorper. Ut porttitor ante non accumsan pretium. Maecenas iaculis arcu sed porta accumsan.</p>
+                        </div>
+                    </div>
+                    <div class="vertical22">
+                        <div class="image"></div>
+                        <div class="text">
+                            <h1>Sed et finibus tortor</h1>
+                            <p>Suspendisse iaculis leo libero, ut congue augue feugiat eu. Nulla faucibus non odio sed auctor. Vestibulum a tincidunt dolor, eget eleifend lacus.</p>
+                        </div>
+                    </div>
+                    <div class="vertical23">
+                        <div class="image"></div>
+                        <div class="text">
+                            <h1>Vestibulum sit amet</h1>
+                            <p>Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="last">
+            <div class="last1">
+                <div class="last11">
+                    <div class="name">
+                        <form >
+                            <input type="text" placeholder="Name" style="height: 48px;width:288px;"  required>
+                            <label for=""></label>
+                        </form>
+                    </div>
+                    <div class="email">
+                        <form >
+                            <input type="text" placeholder="Email" style="height: 48px;width:288px;" required>
+                            <label for=""></label>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="last12">
+                    <form action="">
+                        <textarea name="" id="" rows="12" cols="83" placeholder="Message" required></textarea>
+                    </form>
+                </div>
+                <div class="last13">
+                    <form action="">
+                        <button style="height: 50px;width:200px;" class="hovereffect">Send It Now</button>
+                    </form>
+                </div>
+            </div>
+            <div class="last2">
+                <p class="heading">Contact Us</p>
+                <p>Integer pretium volutpat tempor. Maecenas condimentum tincidunt leo. Paesent scelerisque erat placerat tempus laoreet. Vivamus pellentesque tempor congue.</p>
+                <p>120-240 Proin mauris enim, dignissim sit amet ligula id, finibus tempus erat 10200</p>
+            </div>
+        </div>
+        <div class="copyright">Copyright © 2018 Your Company Name - Design: Central</div>
+        
+    </div>
+    
+
+</body>
+</html>
